@@ -18,6 +18,8 @@
             <h1 class="panel-title">Add Stock</h1>
         </div>
         <!-- -->
+        <form action="{{action('StockController@store')}}" method="POST">
+        {{ csrf_field()}}
         <div class="col col-xs-2 text-right ">
           <button type="button" class="btn  btn-success "> ADD NEW<i class="fa fa-plus-square" ></i></button>
         </div>
@@ -45,21 +47,21 @@
             </td>
              <td> 
                     <div class="form-group">
-                              <label for="#"></label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              <label for="name"></label>
+                              <input type="text" class="form-control" name="name" placeholder="Item name">
                     </div> 
             </td>
 
              <td>
                     <div class="form-group">
-                          <label for="#"></label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                          <label for="description"></label>
+                          <input type="text" class="form-control" name="description" placeholder="description of item">
                      </div>
              </td>
              <td>
                    <div class="form-group">
-                        <label for="#"></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <label for="qty"></label>
+                        <input type="text" class="form-control" name="qty" placeholder="quantity item">
                    </div>
               </td>
           </tr>
@@ -69,13 +71,13 @@
             
            
          </thead>
-         <form>
+         
          <tbody>
           <tr class="ok">
          
            <tr >
             <th class="text-center">Price</th>
-            <th class="text-center">Tax</th>
+            <th class="text-center">Category</th>
             <th class="text-center">Label</th>
             <th class="text-center">Bar Code Num</th>
           </tr>
@@ -83,25 +85,25 @@
              <th>
                 <div class="form-group">
                               <label for="#"></label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Price">
+                              <input type="email" class="form-control" id="Price" placeholder="Price">
                   </div> 
              </th>
              <th>
                  <div class="form-group">
                               <label for="#"></label>
-                              <input type="email" class="form-control " id="exampleInputEmail1" placeholder="Tax">
+                              <input type="email" class="form-control " id="Category" placeholder="Category">
                   </div> 
              </th>
              <th>
                    <div class="form-group">
                               <label for="#"></label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Label">
+                              <input type="email" class="form-control" id="Label" placeholder="Label">
                   </div> 
              </th>
              <th>
                    <div class="form-group">
                               <label for="#"></label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Category">
+                              <input type="email" class="form-control" id="Bar code" placeholder="Bar code">
                   </div> 
 
              </th>
@@ -109,7 +111,7 @@
           
          
           </tbody>
-          </form>
+          
         </table>
       </div><!-- END id="list" -->
         
@@ -123,6 +125,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
           </div>
    </div>
+   </form>
   </div><!--END panel-table-->
 </div>
 </div>

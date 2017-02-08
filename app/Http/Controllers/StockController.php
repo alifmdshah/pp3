@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Sentinel;
 
 class StockController extends Controller
 {
@@ -13,7 +14,7 @@ class StockController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
     /**
@@ -23,7 +24,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +35,8 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $stocks=Sentinel::create($request->all());
+        return redirect('/');
     }
 
     /**

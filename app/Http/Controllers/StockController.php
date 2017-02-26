@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Sentinel;
+use App\stock;
 
 class StockController extends Controller
 {
@@ -35,7 +36,7 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        $stocks=Sentinel::create($request->all());
+        $stocks=stock::create($request->all());
         return redirect('/');
     }
 
